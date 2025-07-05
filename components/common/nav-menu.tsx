@@ -76,8 +76,14 @@ export default function Component() {
                         href={link.href}
                         className="py-1.5"
                         active={link.active}
+                        asChild
                       >
-                        {link.label}
+                        <Link
+                          href={link.href}
+                          className="text-muted-foreground hover:text-primary py-1.5 font-medium"
+                        >
+                          {link.label}
+                        </Link>
                       </NavigationMenuLink>
                     </NavigationMenuItem>
                   ))}
@@ -87,7 +93,7 @@ export default function Component() {
           </Popover>
           {/* Main nav */}
           <div className="flex items-center gap-6">
-            <Link href="#" className="text-primary hover:text-primary/90">
+            <Link href="/" className="text-primary hover:text-primary/90">
               Ai Tools
             </Link>
             {/* Navigation menu */}
@@ -98,9 +104,15 @@ export default function Component() {
                     <NavigationMenuLink
                       active={link.active}
                       href={link.href}
+                      asChild
                       className="text-muted-foreground hover:text-primary py-1.5 font-medium"
                     >
-                      {link.label}
+                      <Link
+                        href={link.href}
+                        className="text-muted-foreground hover:text-primary py-1.5 font-medium"
+                      >
+                        {link.label}
+                      </Link>
                     </NavigationMenuLink>
                   </NavigationMenuItem>
                 ))}
